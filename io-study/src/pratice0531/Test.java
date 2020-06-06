@@ -111,6 +111,6 @@ public class Test {
         int mid = (low + high) / 2;
         mergeSortHelper(array,low,mid);
         mergeSortHelper(array,mid, high);
-        merge(array,low,mid,high);
+        merge(array,low,mid,high );
     }
 }
