@@ -2,6 +2,7 @@ package frank.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import frank.model.Article;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,7 +25,7 @@ public class   JSONUtil {
     /**
      * JSON对象序列化为json字符串
      */
-    public static String serialize(Object o) {
+    public static String serialize(Object o, Class<Article> articleClass) {
         try {
             return getMapper().writeValueAsString(0);
         } catch (JsonProcessingException e) {
@@ -38,7 +39,7 @@ public class   JSONUtil {
      * HttpServletRequest获取json字符串时,只能通过输入流获取
      */
 
-    public <T> T deserialize(InputStream is, Class<T> valueType) {
+    public static <T> T deserialize(InputStream is, Class<T> valueType) {
         try {
             return getMapper().readValue(is, valueType);
         } catch (IOException e) {

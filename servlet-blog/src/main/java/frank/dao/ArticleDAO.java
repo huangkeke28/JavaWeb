@@ -19,9 +19,7 @@ public class ArticleDAO {
         //获取数据库连接
         try {
             c = DBUtil.getConnection();
-            String sql ="select a.id, a.id, a.title, a.content, " +
-                    "a.user_id, a.create_time from article a join user u on" +
-                    " u.id = a.user_id where  u.id  = ?";
+            String sql = "select a.id, a.id, a.title, a.content, a.user_id, a.create_time from article a join user u on u.id = a.user_id where  u.id=?";
             //创建操作命令对象
             ps = c.prepareStatement(sql);
             ps.setInt(1, id);
@@ -41,8 +39,11 @@ public class ArticleDAO {
         } catch (Exception e) {
             throw new RuntimeException("查询文章列表sql错误,一般都是自己sql写错了", e);
         } finally {//释放资源
-            DBUtil.close(c,ps,rs);
+            DBUtil.close(c, ps, rs);
         }
         return articles;
     }
 }
+
+
+

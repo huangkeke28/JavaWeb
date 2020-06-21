@@ -16,6 +16,6 @@
 
     <!-- 映射/首页路径为指定的路径 -->
     <welcome-file-list>
-        <welcome-file>/jsp/articleList.jsp</welcome-file>
+        <welcome-file>jsp/articleList.jsp</welcome-file>
     </welcome-file-list>
 </web-app>
