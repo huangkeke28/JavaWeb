@@ -1,6 +1,5 @@
 package frank.servlet;
 
-import frank.dao.ArticleDAO;
 import frank.model.Article;
 import frank.util.JSONUtil;
 
@@ -13,10 +12,10 @@ public class ArticleAddServlet extends AbstractBaseServlet {
     @Override
     public Object process(HttpServletRequest req, HttpServletResponse resp) throws Exception {
         Article article = JSONUtil.deserialize(req.getInputStream(), Article.class);
-        int num = ArticleDAO.insert(article);
-        if (num != 1) {
-            throw new RuntimeException("插入文章数量异常");
-        }
+        //int num = ArticleDAO.insert(article);
+//        if (num != 1) {
+//            throw new RuntimeException("插入文章数量异常");
+//        }
         return null;
-    }
+   }
 }

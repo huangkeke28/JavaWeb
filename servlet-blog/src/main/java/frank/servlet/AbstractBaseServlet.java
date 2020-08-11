@@ -1,7 +1,6 @@
 package frank.servlet;
 
 import frank.model.Response;
-import frank.util.JSONUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -42,7 +41,7 @@ public abstract  class AbstractBaseServlet extends HttpServlet {
         }
         //响应数据时json数据的格式
         PrintWriter pw = resp.getWriter();
-        pw.println(JSONUtil.serialize(response));
+        //pw.println(JSONUtil.serialize(response));
         pw.flush();
 
     }
