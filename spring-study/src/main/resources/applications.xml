@@ -10,5 +10,42 @@ id相当于bean的名字,Spring可以通过id找到bean对象
 <bean id="bit" class="java.lang.String"></bean>
 <!--    <bean class="java.lang.String"></bean> &lt;!&ndash;生成一个id为string的字符串对象&ndash;&gt;-->
 
-
+<bean id="s1" class="java.lang.String">
+    <constructor-arg value="LadyGaGa"></constructor-arg>
+</bean>
+    <bean id="duck1" class="frank.Duck3">
+        <property name="name" value="北京烤鸭"></property>
+        <property name="age" value="1"></property>
+        <property name="next" ref="duck2"></property>
+    </bean>
+    <bean id="duck2" class="frank.Duck3">
+        <property name="name" value="北京"></property>
+        <property name="age" value="2"></property>
+        <property name="next" ref="duck3"></property>
+    </bean>
+    <bean id="duck3" class="frank.Duck3">
+        <property name="name" value="北京烤鸭"></property>
+        <property name="age" value="3"></property>
+    </bean>
+    <bean id="shop" class="frank.DuckShop">
+        <property name="ducks">
+            <list>
+                <ref bean="d1"></ref>
+                <ref bean="d1_2"></ref>
+                <ref bean="d1_3"></ref>
+            </list>
+        </property>
+    </bean>
+    <bean id="d1" class="frank.Duck">
+        <property name="name" value="北京烤鸭"></property>
+        <property name="age" value="3"></property>
+    </bean>
+    <bean id="d1_2" class="frank.Duck">
+        <property name="name" value="烤鸭"></property>
+        <property name="age" value="5"></property>
+    </bean>
+    <bean id="d1_3" class="frank.Duck">
+        <property name="name" value="北京"></property>
+        <property name="age" value="6"></property>
+    </bean>
 </beans>
